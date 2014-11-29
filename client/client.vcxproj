@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B717AAB0-5A21-4F12-ABB3-695572CDE220}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>client</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>NotSet</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Qt\4.8.0\include;C:\Qt\4.8.0\include\QtCore;C:\Qt\4.8.0\include\QtGui;C:\Qt\4.8.0\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>qtmaind.lib;QtCored4.lib;QtGuid4.lib;QtNetworkd4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalLibraryDirectories>C:\Qt\4.8.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>C:\Qt\4.8.0\include;C:\Qt\4.8.0\include\QtCore;C:\Qt\4.8.0\include\QtGui;C:\Qt\4.8.0\include\QtNetwork;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>C:\Qt\4.8.0\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>qtmain.lib;QtCore4.lib;QtGui4.lib;QtNetwork4.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="client.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="tmp\moc\debug_shared\moc_client.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="client.h">
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\4.8.0\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_EDITION=QT_EDITION_DESKTOP -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_THREAD_SUPPORT -IC:\Qt\4.8.0\include\QtGui -IC:\Qt\4.8.0\include\QtNetwork -IC:\Qt\4.8.0\include\QtCore -IC:\Qt\4.8.0\include -Itmp\moc\debug_shared -I. -IC:\Qt\4.8.0\mkspecs\win32-msvc2010 -D_MSC_VER=1300 -DWIN32 client.h -o tmp\moc\debug_shared\moc_client.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">MOC client.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">tmp\moc\debug_shared\moc_client.cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Qt\4.8.0\bin\moc.exe</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\4.8.0\bin\moc.exe  -DUNICODE -DWIN32 -DQT_LARGEFILE_SUPPORT -DQT_EDITION=QT_EDITION_DESKTOP -DQT_DLL -DQT_CORE_LIB -DQT_GUI_LIB -DQT_THREAD_SUPPORT -IC:\Qt\4.8.0\include\QtGui -IC:\Qt\4.8.0\include\QtNetwork -IC:\Qt\4.8.0\include\QtCore -IC:\Qt\4.8.0\include -Itmp\moc\debug_shared -I. -IC:\Qt\4.8.0\mkspecs\win32-msvc2010 -D_MSC_VER=1300 -DWIN32 client.h -o tmp\moc\debug_shared\moc_client.cpp</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MOC client.h</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">tmp\moc\debug_shared\moc_client.cpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:\Qt\4.8.0\bin\moc.exe</AdditionalInputs>
+    </CustomBuild>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
